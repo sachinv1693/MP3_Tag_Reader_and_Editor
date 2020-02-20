@@ -72,7 +72,7 @@ Status edit_file_content(char* filename, ModifierType modifier, char* new_conten
 				//No. of bytes to be copied in the end including EOF byte
 				long copy_bytes = eof - ftell(mp3_fptr) + 1;
 				//Copy remaining data
-				char remaining_bytes[copy_bytes];
+				char* remaining_bytes = malloc(copy_bytes * sizeof(long));
 				fread(remaining_bytes, copy_bytes, 1, mp3_fptr);
 				//printf("After copying remaining bytes into a buffer: %ld\n", ftell(mp3_fptr));
 				//Go back to offset position where size is written
@@ -106,6 +106,7 @@ Status edit_file_content(char* filename, ModifierType modifier, char* new_conten
 				//Now copy the remaining bytes
 				fwrite(remaining_bytes, copy_bytes, 1, mp3_fptr);
 				printf("INFO: File size modified to = %ld bytes\n", ftell(mp3_fptr));
+			        free(remaining_bytes);
 		}
 }
 
