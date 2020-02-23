@@ -5,8 +5,7 @@ Run the makefile.
 Running the executable file without providing options will give an error message.
 User will be asked to check -h (--help) option to know the usage.
 
-
-./mp3_tag_reader_and_editor.exe -h
+    ./mp3_tag_reader_and_editor.exe -h
 
 Provide a MP3 file and perform view & edit operations. If the given file does not exist in the current project directory or if the filename is not having ".mp3" format or if the given file is empty then an error message will appear.
 
