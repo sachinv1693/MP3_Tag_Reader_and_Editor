@@ -9,7 +9,7 @@ Status edit_mp3_tag(ModifierType modifier, char* new_content)
 		switch (modifier)//Tag to be modified
 		{
 				case e_title://Title
-						seek_from = get_tag_position("TIT2");
+					        seek_from = get_tag_position("TIT2");
 						break;
 				case e_track://Track
 						seek_from = get_tag_position("TRCK");
