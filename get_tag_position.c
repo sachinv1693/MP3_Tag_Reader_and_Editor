@@ -2,10 +2,9 @@
 
 long get_tag_position(const char* tag_name)
 {
-		//We know that all ouer tags are 4 byte long + 1 NUL byte in the end
-		char get_tag[5];
+	//We know that all ouer tags are 4 byte long + 1 NUL byte in the end
+	char get_tag[5];
         get_tag[4] = '\0';
-        char ch;//every beginning character from the file
         long seek_from = 0;//Position of tag in the file initially at 0
         fseek(mp3_fptr, 0L, SEEK_SET);//Get back to the beginning of the file
         seek_from = ftell(mp3_fptr);
@@ -23,9 +22,9 @@ long get_tag_position(const char* tag_name)
         if (seek_from == eof - 3)
         {
                 //printf("TAG not found!!\n");//Reaching to the eof, TAG not found
-				return -1;
+		return -1;
         }
-		//printf("Seek from = %ld\n", seek_from);
-		return seek_from;
+	//printf("Seek from = %ld\n", seek_from);
+	return seek_from;
 }
 
